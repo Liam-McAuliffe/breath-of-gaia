@@ -1,0 +1,73 @@
+const LocationForm = ({ formData, setFormData }) => {
+  const requestCoordinates = async () => {
+    const encodedText = encodeURIComponent(
+      `${formData.address}, ${formData.zipCode}`
+    );
+    const apiKey = import.meta.env.VITE_GEOAPIFY_API_KEY;
+    try {
+      const response = await fetch(
+        `https://api.geoapify.com/v1/geocode/search?text=${encodedText}&apiKey=${apiKey}`
+      );
+      const result = await response.json();
+      console.log('API result:', result);
+      return result;
+    } catch (error) {
+      console.error('Error fetching location data:', error);
+      return null;
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const result = await requestCoordinates();
+    if (result?.features?.length > 0) {
+      const coords = result.features[0].geometry.coordinates;
+      setFormData((prev) => ({
+        ...prev,
+        latitude: coords[1],
+        longitude: coords[0],
+        submitted: true,
+      }));
+    }
+  };
+
+  return (
+    <form className="location-form" onSubmit={handleSubmit}>
+      <label htmlFor="address">Street Address</label>
+      <input
+        id="address"
+        name="address"
+        type="text"
+        placeholder="Street Address"
+        required
+        value={formData.address || ''}
+        onChange={(e) =>
+          setFormData((prev) => ({
+            ...prev,
+            address: e.target.value,
+          }))
+        }
+      />
+      <label htmlFor="zipcode">ZIP Code</label>
+      <input
+        id="zipcode"
+        name="zipcode"
+        type="text"
+        pattern="[0-9]{5}"
+        title="Five digit zip code"
+        placeholder="ZIP Code"
+        required
+        value={formData.zipCode || ''}
+        onChange={(e) =>
+          setFormData((prev) => ({
+            ...prev,
+            zipCode: e.target.value,
+          }))
+        }
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default LocationForm;

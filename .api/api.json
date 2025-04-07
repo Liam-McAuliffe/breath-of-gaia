@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "apis": [
+    {
+      "identifier": "wattbuy",
+      "source": "@wattbuy/v1.0#gw612bm20epcas",
+      "integrity": "sha512-UKN30agBe27S6avjG84nq4SbUCUCQT6qwxPl0oLSoG6NcFp+2F/DyMY6BK3wGag0Inb1PSWm5i+KxzqrscHKTA==",
+      "installerVersion": "6.1.3"
+    }
+  ]
+}
