@@ -21,7 +21,7 @@ const Topbar = () => {
       <div className="topbar-item">
         <nav>
           <a
-            href="https://github.com/Liam-McAuliffe/breath-of-gaia#"
+            href="https://github.com/Liam-McAuliffe/breath-of-gaia?tab=readme-ov-file#breath-of-gaia"
             target="_blank"
           >
             about
