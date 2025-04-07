@@ -41,40 +41,21 @@ const ElectricUsage = ({ address, zipcode, electricData, setElectricData }) => {
   }, [address, zipcode]);
 
   return (
-    <div className="electric-usage">
-      {electricData ? (
-        <>
-          <h2>Electricity Usage Estimation for {electricData.state}</h2>
-          <div className="usage-info">
-            <p>
-              <strong>Estimated Usage:</strong> {electricData.estimatedUsage}{' '}
-              kWh
-            </p>
-            <p>
-              <strong>Estimated Bill Range:</strong> $
-              {electricData.estimatedBillRange.min} - $
-              {electricData.estimatedBillRange.max}
-            </p>
-            <p>
-              <strong>Average Cost:</strong> ${electricData.averageCost} per
-              unit
-            </p>
-          </div>
-
-          <div className="monthly-data">
-            <h3>Monthly Graph Data</h3>
-            <ul>
-              {electricData.monthlyGraphData.map((point, index) => (
-                <li key={index}>
-                  <strong>{point.x}:</strong> {point.y} kWh
-                </li>
-              ))}
-            </ul>
-          </div>
-        </>
-      ) : (
-        <p>Loading electric usage data...</p>
-      )}
+    <div className="electric-usage data-section">
+      <h2>Your Home’s Estimated Electric Usage</h2>
+      <div className="usage-info">
+        <p>
+          <strong>Monthly Usage:</strong> {electricData.estimatedUsage} kWh
+        </p>
+        <p>
+          <strong>Estimated Monthly Bill:</strong> $
+          {electricData.estimatedBillRange.min} - $
+          {electricData.estimatedBillRange.max}
+        </p>
+        <p>
+          <strong>Average Cost per kWh:</strong> ${electricData.averageCost}
+        </p>
+      </div>
     </div>
   );
 };

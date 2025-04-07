@@ -1,5 +1,6 @@
+import './locationform.css';
 const LocationForm = ({ formData, setFormData }) => {
-  const requestCoordinates = async () => {
+  const requestLocation = async () => {
     const encodedText = encodeURIComponent(
       `${formData.address}, ${formData.zipCode}`
     );
@@ -19,11 +20,13 @@ const LocationForm = ({ formData, setFormData }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await requestCoordinates();
+    const result = await requestLocation();
     if (result?.features?.length > 0) {
       const coords = result.features[0].geometry.coordinates;
+      const state = result.query.parsed.state;
       setFormData((prev) => ({
         ...prev,
+        state,
         latitude: coords[1],
         longitude: coords[0],
         submitted: true,
