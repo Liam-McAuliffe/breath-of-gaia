@@ -123,7 +123,7 @@ const ResourcesSection = () => {
   };
 
   return (
-    <section className="resources-section">
+    <section className="resources-section" id="resources">
       <h2>Take Action: Resources to Improve Your Impact</h2>
       <p className="resources-intro">
         Based on your home's energy profile, here are resources to help you

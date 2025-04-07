@@ -20,9 +20,16 @@ const Topbar = () => {
       </div>
       <div className="topbar-item">
         <nav>
-          <a href="">about</a>
-          <a href="">resources</a>
-          <a href="">contact</a>
+          <a
+            href="https://github.com/Liam-McAuliffe/breath-of-gaia#"
+            target="_blank"
+          >
+            about
+          </a>
+          <a href="#resources">resources</a>
+          <a href="https://liam-mcauliffe.github.io/" target="_blank">
+            contact
+          </a>
         </nav>
       </div>
     </div>

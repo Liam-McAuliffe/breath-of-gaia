@@ -1,4 +1,8 @@
 /* Enhanced Data Sections */
+html {
+  scroll-behavior: smooth;
+}
+
 .app-main {
   background-color: var(--color-bg-light);
   padding: var(--space-xl) var(--space-md);
