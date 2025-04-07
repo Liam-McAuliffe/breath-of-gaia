@@ -36,41 +36,44 @@ const LocationForm = ({ formData, setFormData }) => {
 
   return (
     <form className="location-form" onSubmit={handleSubmit}>
-      <label htmlFor="address">Street Address</label>
-      <input
-        id="address"
-        name="address"
-        type="text"
-        placeholder="Street Address"
-        required
-        value={formData.address || ''}
-        onChange={(e) =>
-          setFormData((prev) => ({
-            ...prev,
-            address: e.target.value,
-            submitted: false,
-          }))
-        }
-      />
-      <label htmlFor="zipcode">ZIP Code</label>
-      <input
-        id="zipcode"
-        name="zipcode"
-        type="text"
-        pattern="[0-9]{5}"
-        title="Five digit zip code"
-        placeholder="ZIP Code"
-        required
-        value={formData.zipCode || ''}
-        onChange={(e) =>
-          setFormData((prev) => ({
-            ...prev,
-            zipCode: e.target.value,
-            submitted: false,
-          }))
-        }
-      />
-      <button type="submit">Submit</button>
+      <p className="call-to-action">
+        Enter your address to discover your impact!
+      </p>
+      <div className="input-container">
+        <input
+          id="address"
+          name="address"
+          type="text"
+          placeholder="Street Address"
+          required
+          value={formData.address || ''}
+          onChange={(e) =>
+            setFormData((prev) => ({
+              ...prev,
+              address: e.target.value,
+              submitted: false,
+            }))
+          }
+        />
+        <input
+          id="zipcode"
+          name="zipcode"
+          type="text"
+          pattern="[0-9]{5}"
+          title="Five digit zip code"
+          placeholder="ZIP Code"
+          required
+          value={formData.zipCode || ''}
+          onChange={(e) =>
+            setFormData((prev) => ({
+              ...prev,
+              zipCode: e.target.value,
+              submitted: false,
+            }))
+          }
+        />
+        <button type="submit">Submit</button>
+      </div>
     </form>
   );
 };

@@ -1,0 +1,39 @@
+.topbar {
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25em 1em;
+  color: var(--color-3);
+  border-bottom: solid 3px var(--color-bg-deep);
+  flex-wrap: wrap;
+}
+
+.topbar-item {
+  flex-grow: 50%;
+}
+
+.logo {
+  height: 3em;
+}
+
+.logotype {
+  display: flex;
+  align-items: center;
+}
+.tagline {
+  font-style: italic;
+}
+
+nav {
+  display: flex;
+  gap: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-3);
+  background-color: var(--color-button);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}

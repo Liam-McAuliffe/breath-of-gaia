@@ -1,6 +1,7 @@
 import './App.css';
+import '../../theme-variables.css';
 
-import Greeting from '../greeting/Greeting';
+import Topbar from '../topbar/Topbar';
 import LocationForm from '../location_form/LocationForm';
 import ElectricUsage from '../electric_usage/ElectricUsage';
 import CarbonUsage from '../carbon_usage/CarbonUsage';
@@ -43,10 +44,9 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <Greeting />
-        <LocationForm formData={formData} setFormData={setFormData} />
+        <Topbar />
       </header>
-
+      <LocationForm formData={formData} setFormData={setFormData} />
       {formData.submitted && (
         <main className="app-main">
           <section className="data-sections">
