@@ -48,6 +48,7 @@ const LocationForm = ({ formData, setFormData }) => {
           setFormData((prev) => ({
             ...prev,
             address: e.target.value,
+            submitted: false,
           }))
         }
       />
@@ -65,6 +66,7 @@ const LocationForm = ({ formData, setFormData }) => {
           setFormData((prev) => ({
             ...prev,
             zipCode: e.target.value,
+            submitted: false,
           }))
         }
       />
