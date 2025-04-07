@@ -6,6 +6,7 @@ import LocationForm from '../location_form/LocationForm';
 import ElectricUsage from '../electric_usage/ElectricUsage';
 import CarbonUsage from '../carbon_usage/CarbonUsage';
 import AirQuality from '../air_quality/AirQuality';
+import ResourcesSection from '../resources_selection/ResourcesSelection';
 import Chart from '../chart/Chart';
 
 import { useState } from 'react';
@@ -79,6 +80,7 @@ function App() {
         </main>
       )}
 
+      <ResourcesSection />
       <footer className="app-footer"></footer>
     </div>
   );

@@ -17,3 +17,24 @@
     padding: 1em;
   }
 }
+
+/* Enhanced Tooltip */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: var(--color-bg-dark) !important;
+  border: none !important;
+  border-radius: var(--radius-md) !important;
+  padding: var(--space-md) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.recharts-tooltip-label {
+  color: var(--color-tertiary) !important;
+  font-family: var(--font-family-heading) !important;
+  font-weight: 600 !important;
+  margin-bottom: var(--space-sm) !important;
+}
+
+.recharts-tooltip-item {
+  color: var(--color-text-light) !important;
+  font-family: var(--font-family-body) !important;
+}
