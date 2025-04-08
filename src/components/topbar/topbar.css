@@ -24,11 +24,9 @@ img {
 
 .logotype .title h1 {
   font-family: var(--font-family-heading);
-  font-weight: 700;
-  font-size: 1.8rem;
-  margin: 0;
+  font-weight: 600;
+  font-size: 1.7rem;
   color: var(--color-tertiary);
-  letter-spacing: 0.5px;
 }
 
 .tagline {
