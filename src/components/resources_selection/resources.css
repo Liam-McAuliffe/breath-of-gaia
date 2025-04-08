@@ -44,7 +44,6 @@
   cursor: pointer;
   position: relative;
   border-top: 4px solid var(--color-accent);
-  min-height: 140px;
 }
 
 .resource-card:nth-child(2) {
@@ -72,6 +71,7 @@
 .resource-header {
   padding: var(--space-lg);
   position: relative;
+  min-height: 100px;
 }
 
 .resource-header h3 {

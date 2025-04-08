@@ -22,15 +22,20 @@ const LocationForm = ({ formData, setFormData }) => {
     e.preventDefault();
     const result = await requestLocation();
     if (result?.features?.length > 0) {
-      const coords = result.features[0].geometry.coordinates;
-      const state = result.query.parsed.state;
-      setFormData((prev) => ({
-        ...prev,
-        state,
-        latitude: coords[1],
-        longitude: coords[0],
-        submitted: true,
-      }));
+      try {
+        const coords = result.features[0].geometry.coordinates;
+        const state = result.query.parsed.state;
+        setFormData((prev) => ({
+          ...prev,
+          state,
+          latitude: coords[1],
+          longitude: coords[0],
+          submitted: true,
+        }));
+      } catch (error) {
+        console.error('Submit error:', error);
+        alert('Address not found. Please check spelling.');
+      }
     }
   };
 

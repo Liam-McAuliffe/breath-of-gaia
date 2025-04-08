@@ -27,7 +27,10 @@ const Topbar = () => {
             about
           </a>
           <a href="#resources">resources</a>
-          <a href="https://liam-mcauliffe.github.io/" target="_blank">
+          <a
+            href="https://liam-mcauliffe.github.io/#contact-me"
+            target="_blank"
+          >
             contact
           </a>
         </nav>

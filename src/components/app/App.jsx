@@ -81,7 +81,7 @@ function App() {
       )}
 
       <ResourcesSection />
-      <footer className="app-footer"></footer>
+      <footer className="app-footer">Created by Liam McAuliffe</footer>
     </div>
   );
 }
