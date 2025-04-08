@@ -48,4 +48,3 @@ The app features a clean design supported by CSS variables and a responsive layo
 - **Improved Error Handling:** Better user feedback when API calls fail.
 - **Loading Indicators:** Spinners or skeleton loaders while data is fetching.
 - **Additional Metrics:** Including comparisons such as trees required to offset emissions, driving mileage equivalence, etc.
-- **Dark Mode:** A toggle to switch between light and dark themes.
