@@ -1,3 +1,5 @@
+import { WebsiteCarbonBadge } from 'react-websitecarbon-badge';
+
 import './App.css';
 import '../../theme-variables.css';
 
@@ -36,8 +38,6 @@ function App() {
   const [airQualityData, setAirQualityData] = useState({
     carbon_monoxide: 0,
     carbon_dioxide: 0,
-    nitrogen_dioxide: 0,
-    sulphur_dioxide: 0,
     ozone: 0,
     methane: 0,
   });
@@ -81,7 +81,15 @@ function App() {
       )}
 
       <ResourcesSection />
-      <footer className="app-footer">Created by Liam McAuliffe</footer>
+      <footer className="app-footer">
+        Created by Liam McAuliffe
+        <WebsiteCarbonBadge
+          co2="0.06"
+          percentage="95"
+          dark="true"
+          url="breath-of-gaia-pages-dev"
+        />
+      </footer>
     </div>
   );
 }

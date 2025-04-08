@@ -16,8 +16,6 @@ const AirQuality = ({
     setAirQualityData({
       carbon_monoxide: currentLevels.carbon_monoxide,
       carbon_dioxide: currentLevels.carbon_dioxide,
-      nitrogen_dioxide: currentLevels.nitrogen_dioxide,
-      sulphur_dioxide: currentLevels.sulphur_dioxide,
       ozone: currentLevels.ozone,
       methane: currentLevels.methane,
     });
@@ -37,14 +35,6 @@ const AirQuality = ({
         </li>
         <li>
           <strong>Carbon Dioxide:</strong> {airQualityData.carbon_dioxide} ppm
-        </li>
-        <li>
-          <strong>Nitrogen Dioxide:</strong> {airQualityData.nitrogen_dioxide}{' '}
-          μg/m³
-        </li>
-        <li>
-          <strong>Sulphur Dioxide:</strong> {airQualityData.sulphur_dioxide}{' '}
-          μg/m³
         </li>
         <li>
           <strong>Ozone:</strong> {airQualityData.ozone} μg/m³

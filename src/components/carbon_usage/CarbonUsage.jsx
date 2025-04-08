@@ -36,7 +36,21 @@ const CarbonUsage = ({
       <h2>Estimated Carbon Emissions from Electricity</h2>
       <p>
         Your electricity usage results in approximately{' '}
-        <strong>{carbonData.carbonlb} lbs</strong> of CO₂ per month.
+        <strong>{carbonData.carbonlb} lbs</strong> of CO₂ per year.
+      </p>
+      <p>
+        Thats as much as{' '}
+        <strong>
+          {' '}
+          <a
+            className="info"
+            href="https://www.usda.gov/about-usda/news/blog/power-one-tree-very-air-we-breathe"
+            target="_blank"
+          >
+            {Math.round(carbonData.carbonlb / 48)} mature trees
+          </a>
+        </strong>{' '}
+        absorb in a year.
       </p>
     </div>
   );

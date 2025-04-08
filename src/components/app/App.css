@@ -67,7 +67,8 @@ html {
   color: var(--color-text-dark);
 }
 
-.data-section strong {
+.data-section strong,
+.info {
   color: var(--color-bg-dark);
 }
 
