@@ -92,10 +92,10 @@ const ResourcesSection = memo(() => {
           linkText: 'EPA guide to air cleaners',
         },
         {
-          heading: 'Home Air Quality Monitor',
-          text: 'Install an air quality monitor to track pollution levels inside your home.',
-          link: 'https://www.airnow.gov/',
-          linkText: 'Check your local air quality',
+          heading: 'Help Keep the Air Cleaner',
+          text: 'Take everyday steps to reduce air pollution and protect your health.',
+          link: 'https://www.airnow.gov/education/what-you-can-do/',
+          linkText: 'Learn how to reduce air pollution',
         },
         {
           heading: 'Indoor Plants',
