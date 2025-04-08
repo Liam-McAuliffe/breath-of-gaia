@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 
 const AirQuality = ({
   latitude,
@@ -6,7 +6,7 @@ const AirQuality = ({
   airQualityData,
   setAirQualityData,
 }) => {
-  const requestAirQualityData = async () => {
+  const requestAirQualityData = useCallback(async () => {
     const response = await fetch(
       `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${latitude}&longitude=${longitude}&current=carbon_monoxide,carbon_dioxide,nitrogen_dioxide,sulphur_dioxide,ozone,methane&timezone=auto`
     );
@@ -19,11 +19,11 @@ const AirQuality = ({
       ozone: currentLevels.ozone,
       methane: currentLevels.methane,
     });
-  };
+  }, [latitude, longitude, setAirQualityData]);
 
   useEffect(() => {
     requestAirQualityData();
-  }, [latitude, longitude]);
+  }, [latitude, longitude, requestAirQualityData]);
 
   return (
     <div className="data-section">

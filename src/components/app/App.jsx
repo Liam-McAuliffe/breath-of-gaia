@@ -11,7 +11,7 @@ import AirQuality from '../air_quality/AirQuality';
 import ResourcesSection from '../resources_selection/ResourcesSelection';
 import Chart from '../chart/Chart';
 
-import { useState } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -42,12 +42,23 @@ function App() {
     methane: 0,
   });
 
+  // Memoize airQualityData to prevent unnecessary rerenders
+  const memoizedAirQualityData = useMemo(
+    () => airQualityData,
+    [airQualityData]
+  );
+
+  // Example of wrapping an event handler with useCallback
+  const handleSetFormData = useCallback((newFormData) => {
+    setFormData(newFormData);
+  }, []);
+
   return (
     <div className="app-container">
       <header className="app-header">
         <Topbar />
       </header>
-      <LocationForm formData={formData} setFormData={setFormData} />
+      <LocationForm formData={formData} setFormData={handleSetFormData} />
       {formData.submitted && (
         <main className="app-main">
           <section className="data-sections">
@@ -66,7 +77,7 @@ function App() {
             <AirQuality
               latitude={formData.latitude}
               longitude={formData.longitude}
-              airQualityData={airQualityData}
+              airQualityData={memoizedAirQualityData}
               setAirQualityData={setAirQualityData}
             />
           </section>
