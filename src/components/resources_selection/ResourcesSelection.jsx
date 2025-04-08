@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import './resources.css';
 
-const ResourcesSection = () => {
+const ResourcesSection = memo(() => {
   const [expandedResources, setExpandedResources] = useState([]);
 
   const resources = [
@@ -180,6 +180,6 @@ const ResourcesSection = () => {
       </div>
     </section>
   );
-};
+});
 
 export default ResourcesSection;

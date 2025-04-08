@@ -1,6 +1,7 @@
+import React, { memo } from 'react';
 import './topbar.css';
 
-const Topbar = () => {
+const Topbar = memo(() => {
   return (
     <div className="topbar">
       <div className="topbar-item">
@@ -37,6 +38,6 @@ const Topbar = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Topbar;
