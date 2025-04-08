@@ -1,4 +1,5 @@
 import { WebsiteCarbonBadge } from 'react-websitecarbon-badge';
+import { Helmet } from 'react-helmet';
 
 import './App.css';
 import '../../theme-variables.css';
@@ -55,6 +56,10 @@ function App() {
 
   return (
     <div className="app-container">
+      <Helmet>
+        <title>Home - MyHomeImpact</title>
+        <meta name="description" content="Homepage description" />
+      </Helmet>
       <header className="app-header">
         <Topbar />
       </header>
