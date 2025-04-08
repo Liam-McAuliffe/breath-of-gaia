@@ -33,6 +33,7 @@ img {
   font-family: var(--font-family-body);
   font-style: italic;
   font-size: 0.9rem;
+  font-weight: 600;
   margin-top: var(--space-xs);
   color: var(--color-secondary);
 }

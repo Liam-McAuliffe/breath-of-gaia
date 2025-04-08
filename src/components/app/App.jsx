@@ -103,7 +103,7 @@ function App() {
           co2="0.06"
           percentage="95"
           dark="true"
-          url="breath-of-gaia-pages-dev"
+          url="myhomeimpact-info"
         />
       </footer>
     </div>
