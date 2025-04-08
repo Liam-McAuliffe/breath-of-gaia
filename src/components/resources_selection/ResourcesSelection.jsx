@@ -75,7 +75,7 @@ const ResourcesSection = memo(() => {
         {
           heading: 'Sustainable Diet Choices',
           text: 'Consider reducing meat consumption and choosing locally-grown foods to lower your carbon footprint.',
-          link: 'https://www.earthday.org/reduce-your-foodprint/',
+          link: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9030092/',
           linkText: 'Reduce your foodprint',
         },
       ],
