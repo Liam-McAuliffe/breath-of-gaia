@@ -14,7 +14,7 @@ const Topbar = memo(() => {
             />
           </div>
           <div className="title">
-            <h1>Breath of Gaia</h1>
+            <h1>MyHomeImpact</h1>
           </div>
         </div>
         <p className="tagline">Explore your home's impact on the planet.</p>
