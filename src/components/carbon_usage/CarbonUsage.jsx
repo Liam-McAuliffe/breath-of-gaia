@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { FaTree } from 'react-icons/fa';
 
 const CarbonUsage = ({
   electricMonthlyGraphData,
@@ -39,7 +40,7 @@ const CarbonUsage = ({
         <strong>{carbonData.carbonlb} lbs</strong> of CO₂ per year.
       </p>
       <p>
-        Thats as much as{' '}
+        That's as much as{' '}
         <strong>
           {' '}
           <a
@@ -48,6 +49,7 @@ const CarbonUsage = ({
             target="_blank"
           >
             {Math.round(carbonData.carbonlb / 48)} mature trees
+            <FaTree className="inline-icon" />
           </a>
         </strong>{' '}
         absorb in a year.

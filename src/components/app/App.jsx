@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 
 import './App.css';
 import '../../theme-variables.css';
+import '../../icons.css';
 
 import Topbar from '../topbar/Topbar';
 import LocationForm from '../location_form/LocationForm';
@@ -11,6 +12,7 @@ import CarbonUsage from '../carbon_usage/CarbonUsage';
 import AirQuality from '../air_quality/AirQuality';
 import ResourcesSection from '../resources_selection/ResourcesSelection';
 import Chart from '../chart/Chart';
+import Footer from '../footer/Footer';
 
 import { useState, useMemo, useCallback } from 'react';
 
@@ -49,10 +51,38 @@ function App() {
     [airQualityData]
   );
 
+  // Memoize carbonMonthlyGraphData to ensure stability
+  const memoizedCarbonMonthlyGraphData = useMemo(
+    () => carbonData.monthlyGraphData,
+    [carbonData.monthlyGraphData]
+  );
+
+  // Memoize electricMonthlyGraphData to ensure stability
+  const memoizedElectricMonthlyGraphData = useMemo(
+    () => electricData.monthlyGraphData,
+    [electricData.monthlyGraphData]
+  );
+
+  // Memoize electricData to prevent unnecessary rerenders
+  const memoizedElectricData = useMemo(() => electricData, [electricData]);
+
   // Example of wrapping an event handler with useCallback
   const handleSetFormData = useCallback((newFormData) => {
     setFormData(newFormData);
   }, []);
+
+  // Memoize the WebsiteCarbonBadge to prevent unnecessary rerenders
+  const memoizedWebsiteCarbonBadge = useMemo(
+    () => (
+      <WebsiteCarbonBadge
+        co2="0.06"
+        percentage="95"
+        dark="true"
+        url="myhomeimpact-info"
+      />
+    ),
+    []
+  );
 
   return (
     <div className="app-container">
@@ -68,14 +98,14 @@ function App() {
         <main className="app-main">
           <section className="data-sections">
             <ElectricUsage
-              electricData={electricData}
+              electricData={memoizedElectricData}
               setElectricData={setElectricData}
               address={formData.address}
               zipcode={formData.zipCode}
             />
             <CarbonUsage
               state={formData.state}
-              electricMonthlyGraphData={electricData.monthlyGraphData}
+              electricMonthlyGraphData={memoizedElectricMonthlyGraphData}
               carbonData={carbonData}
               setCarbonData={setCarbonData}
             />
@@ -89,23 +119,15 @@ function App() {
 
           <section className="chart-section">
             <Chart
-              electricMonthlyGraphData={electricData.monthlyGraphData}
-              carbonMonthlyGraphData={carbonData.monthlyGraphData}
+              electricMonthlyGraphData={memoizedElectricMonthlyGraphData}
+              carbonMonthlyGraphData={memoizedCarbonMonthlyGraphData}
             />
           </section>
         </main>
       )}
 
       <ResourcesSection />
-      <footer className="app-footer">
-        Created by Liam McAuliffe
-        <WebsiteCarbonBadge
-          co2="0.06"
-          percentage="95"
-          dark="true"
-          url="myhomeimpact-info"
-        />
-      </footer>
+      <Footer memoizedWebsiteCarbonBadge={memoizedWebsiteCarbonBadge} />
     </div>
   );
 }

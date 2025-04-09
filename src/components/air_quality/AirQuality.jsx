@@ -1,4 +1,5 @@
 import { useEffect, useCallback } from 'react';
+import AirQualityIndicatior from './AirQualityIndicatior';
 
 const AirQuality = ({
   latitude,
@@ -31,16 +32,52 @@ const AirQuality = ({
       <ul>
         <li>
           <strong>Carbon Monoxide:</strong> {airQualityData.carbon_monoxide}{' '}
-          μg/m³
+          μg/m³{' '}
+          <a
+            href="https://www.epa.gov/indoor-air-quality-iaq/carbon-monoxides-impact-indoor-air-quality"
+            target="_blank"
+          >
+            <AirQualityIndicatior
+              airQuality={airQualityData.carbon_monoxide}
+              type="carbon_monoxide"
+            />
+          </a>
         </li>
         <li>
-          <strong>Carbon Dioxide:</strong> {airQualityData.carbon_dioxide} ppm
+          <strong>Carbon Dioxide:</strong> {airQualityData.carbon_dioxide} ppm{' '}
+          <a
+            href="https://www.fsis.usda.gov/sites/default/files/media_file/2020-08/Carbon-Dioxide.pdf"
+            target="_blank"
+          >
+            <AirQualityIndicatior
+              airQuality={airQualityData.carbon_dioxide}
+              type="carbon_dioxide"
+            />
+          </a>
         </li>
         <li>
-          <strong>Ozone:</strong> {airQualityData.ozone} μg/m³
+          <strong>Ozone:</strong> {airQualityData.ozone} μg/m³{' '}
+          <a
+            href="https://www.epa.gov/ground-level-ozone-pollution/ground-level-ozone-basics"
+            target="_blank"
+          >
+            <AirQualityIndicatior
+              airQuality={airQualityData.ozone}
+              type="ozone"
+            />
+          </a>
         </li>
         <li>
-          <strong>Methane:</strong> {airQualityData.methane} ppb
+          <strong>Methane:</strong> {airQualityData.methane} ppb{' '}
+          <a
+            href="https://www.ccacoalition.org/short-lived-climate-pollutants/methane"
+            target="_blank"
+          >
+            <AirQualityIndicatior
+              airQuality={airQualityData.methane}
+              type="methane"
+            />
+          </a>
         </li>
       </ul>
       <p>These levels are based on real-time data from your location.</p>

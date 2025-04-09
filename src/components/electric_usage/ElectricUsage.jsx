@@ -1,6 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
+import { FaCar } from 'react-icons/fa';
 
 const ElectricUsage = ({ address, zipcode, electricData, setElectricData }) => {
+  const memoizedSetElectricData = useCallback(setElectricData, [
+    setElectricData,
+  ]);
+
   const requestElectricUsage = async () => {
     try {
       const apiKey = import.meta.env.VITE_WATTBUY_API_KEY;
@@ -27,7 +32,7 @@ const ElectricUsage = ({ address, zipcode, electricData, setElectricData }) => {
       };
 
       console.log('Formatted Electricity Estimation:', result);
-      setElectricData(result);
+      memoizedSetElectricData(result);
     } catch (err) {
       console.error('Electricity Estimation Error:', err);
       throw err;
@@ -45,7 +50,21 @@ const ElectricUsage = ({ address, zipcode, electricData, setElectricData }) => {
       <h2>Your Home’s Estimated Electric Usage</h2>
       <div className="usage-info">
         <p>
-          <strong>Monthly Usage:</strong> {electricData.estimatedUsage} kWh
+          <strong>Yearly Usage:</strong> {electricData.estimatedUsage} kWh
+          <p>
+            Roughly{' '}
+            <strong>
+              <a
+                href="https://ev-database.org/car/1250/Tesla-Cybertruck-Tri-Motor"
+                className="info"
+                target="_blank"
+              >
+                {Math.round(electricData.estimatedUsage / 57.5)} Tesla Model 3s{' '}
+                <FaCar className="inline-icon" />
+              </a>
+            </strong>{' '}
+            worth of energy!
+          </p>
         </p>
         <p>
           <strong>Estimated Monthly Bill:</strong> $

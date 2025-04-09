@@ -1,5 +1,6 @@
+import React, { memo } from 'react';
 import './locationform.css';
-const LocationForm = ({ formData, setFormData }) => {
+const LocationForm = memo(({ formData, setFormData }) => {
   const requestLocation = async () => {
     const encodedText = encodeURIComponent(
       `${formData.address}, ${formData.zipCode}`
@@ -81,6 +82,6 @@ const LocationForm = ({ formData, setFormData }) => {
       </div>
     </form>
   );
-};
+});
 
 export default LocationForm;
