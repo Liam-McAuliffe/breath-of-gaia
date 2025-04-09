@@ -1,4 +1,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaLeaf } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 import './footer.css';
 
 function Footer({ memoizedWebsiteCarbonBadge }) {
@@ -11,15 +13,18 @@ function Footer({ memoizedWebsiteCarbonBadge }) {
           <h3 className="footer-heading">Navigation</h3>
           <ul className="footer-links">
             <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
               <a
-                href="https://github.com/Liam-McAuliffe/breath-of-gaia?tab=readme-ov-file#breath-of-gaia"
+                href="https://github.com/Liam-McAuliffe/myhomeimpact?tab=readme-ov-file#myhomeimpact"
                 target="_blank"
               >
                 About
               </a>
             </li>
             <li>
-              <a href="#resources">Resources</a>
+              <a href="/#resources">Resources</a>
             </li>
           </ul>
         </div>
@@ -53,7 +58,15 @@ function Footer({ memoizedWebsiteCarbonBadge }) {
           </ul>
         </div>
       </div>
-
+      <div className="footer-section legal">
+        <div className="privacy-policy">
+          <Link to="/privacy">Privacy Policy</Link>
+        </div>
+        <span className="separator">|</span>
+        <div className="terms-of-service">
+          <Link to="/tos">Terms of Service</Link>
+        </div>
+      </div>
       <div className="footer-bottom">
         <p>© {currentYear} Liam McAuliffe. All rights reserved.</p>
         <div className="eco-friendly">

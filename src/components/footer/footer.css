@@ -61,6 +61,18 @@
   margin-right: var(--space-sm);
 }
 
+.legal {
+  display: flex;
+  gap: var(--space-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.legal a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
 .footer-bottom {
   padding: var(--space-lg);
   border-top: 1px solid rgba(255, 255, 255, 0.1);

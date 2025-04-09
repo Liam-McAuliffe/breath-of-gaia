@@ -1,6 +1,6 @@
-# Breath of Gaia
+# MyHomeImpact
 
-Breath of Gaia is a React-based web application that lets users discover their home’s environmental impact. By entering their address and ZIP code, users can receive an estimate of their monthly electricity usage, the associated carbon emissions from that usage, and local air quality data—all presented with engaging visuals and a modern, eco-friendly design.
+MyHomeImpact is a React-based web application that lets users discover their home’s environmental impact. By entering their address and ZIP code, users can receive an estimate of their monthly electricity usage, the associated carbon emissions from that usage, and local air quality data—all presented with engaging visuals and a modern, eco-friendly design.
 
 ## Table of Contents
 
@@ -12,7 +12,7 @@ Breath of Gaia is a React-based web application that lets users discover their h
 
 ## Overview
 
-Breath of Gaia is a user-focused application that:
+MyHomeImpact is a user-focused application that:
 
 - **Estimates Home Energy Usage:** Calculates monthly electricity consumption and estimated bill based on user address and ZIP code.
 - **Calculates Carbon Emissions:** Converts energy usage data into an estimated amount of carbon emissions.

@@ -1,5 +1,8 @@
 import { WebsiteCarbonBadge } from 'react-websitecarbon-badge';
 import { Helmet } from 'react-helmet';
+import { Routes, Route } from 'react-router-dom';
+import Privacy from '../footer/privacy/Privacy';
+import Tos from '../footer/tos/Tos';
 
 import './App.css';
 import '../../theme-variables.css';
@@ -86,47 +89,66 @@ function App() {
 
   return (
     <div className="app-container">
-      <Helmet>
-        <title>Home - MyHomeImpact</title>
-        <meta name="description" content="Homepage description" />
-      </Helmet>
       <header className="app-header">
         <Topbar />
       </header>
-      <LocationForm formData={formData} setFormData={handleSetFormData} />
-      {formData.submitted && (
-        <main className="app-main">
-          <section className="data-sections">
-            <ElectricUsage
-              electricData={memoizedElectricData}
-              setElectricData={setElectricData}
-              address={formData.address}
-              zipcode={formData.zipCode}
-            />
-            <CarbonUsage
-              state={formData.state}
-              electricMonthlyGraphData={memoizedElectricMonthlyGraphData}
-              carbonData={carbonData}
-              setCarbonData={setCarbonData}
-            />
-            <AirQuality
-              latitude={formData.latitude}
-              longitude={formData.longitude}
-              airQualityData={memoizedAirQualityData}
-              setAirQualityData={setAirQualityData}
-            />
-          </section>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="home">
+              <Helmet>
+                <title>Home - MyHomeImpact</title>
+                <meta name="description" content="Homepage description" />
+              </Helmet>
 
-          <section className="chart-section">
-            <Chart
-              electricMonthlyGraphData={memoizedElectricMonthlyGraphData}
-              carbonMonthlyGraphData={memoizedCarbonMonthlyGraphData}
-            />
-          </section>
-        </main>
-      )}
+              <LocationForm
+                formData={formData}
+                setFormData={handleSetFormData}
+              />
+              {formData.submitted && (
+                <main className="app-main">
+                  <section className="data-sections">
+                    <ElectricUsage
+                      electricData={memoizedElectricData}
+                      setElectricData={setElectricData}
+                      address={formData.address}
+                      zipcode={formData.zipCode}
+                    />
+                    <CarbonUsage
+                      state={formData.state}
+                      electricMonthlyGraphData={
+                        memoizedElectricMonthlyGraphData
+                      }
+                      carbonData={carbonData}
+                      setCarbonData={setCarbonData}
+                    />
+                    <AirQuality
+                      latitude={formData.latitude}
+                      longitude={formData.longitude}
+                      airQualityData={memoizedAirQualityData}
+                      setAirQualityData={setAirQualityData}
+                    />
+                  </section>
 
-      <ResourcesSection />
+                  <section className="chart-section">
+                    <Chart
+                      electricMonthlyGraphData={
+                        memoizedElectricMonthlyGraphData
+                      }
+                      carbonMonthlyGraphData={memoizedCarbonMonthlyGraphData}
+                    />
+                  </section>
+                </main>
+              )}
+
+              <ResourcesSection />
+            </div>
+          }
+        />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/tos" element={<Tos />} />
+      </Routes>
       <Footer memoizedWebsiteCarbonBadge={memoizedWebsiteCarbonBadge} />
     </div>
   );

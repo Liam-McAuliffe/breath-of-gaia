@@ -18,6 +18,10 @@
   gap: var(--space-sm);
 }
 
+.logo-link {
+  text-decoration: none;
+}
+
 img {
   height: 3em;
 }

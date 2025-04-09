@@ -126,8 +126,8 @@ const ResourcesSection = memo(() => {
     <section className="resources-section" id="resources">
       <h2>Take Action: Resources to Improve Your Impact</h2>
       <p className="resources-intro">
-        Based on your home's energy profile, here are resources to help you
-        reduce your environmental impact and save money.
+        Here are resources to help you reduce your environmental impact and save
+        money.
       </p>
 
       <div className="resources-grid">
