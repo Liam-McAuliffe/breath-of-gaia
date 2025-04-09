@@ -55,7 +55,7 @@ const ElectricUsage = ({ address, zipcode, electricData, setElectricData }) => {
             Roughly{' '}
             <strong>
               <a
-                href="https://ev-database.org/car/1250/Tesla-Cybertruck-Tri-Motor"
+                href="https://ev-database.org/car/1991/Tesla-Model-3"
                 className="info"
                 target="_blank"
               >
