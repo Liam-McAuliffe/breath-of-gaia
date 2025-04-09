@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Routes, Route } from 'react-router-dom';
 import Privacy from '../footer/privacy/Privacy';
 import Tos from '../footer/tos/Tos';
+import ErrorPage from '../error_page/ErrorPage';
 
 import './App.css';
 import '../../theme-variables.css';
@@ -148,6 +149,7 @@ function App() {
         />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/tos" element={<Tos />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer memoizedWebsiteCarbonBadge={memoizedWebsiteCarbonBadge} />
     </div>
