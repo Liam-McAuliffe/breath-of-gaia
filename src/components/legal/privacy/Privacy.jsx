@@ -9,7 +9,7 @@ const Privacy = () => {
       </h1>
       <embed
         className="h-full w-full"
-        src="../../../public/docs/privacy-policy.pdf"
+        src="../../../docs/privacy-policy.pdf"
         type="application/pdf"
         title="Privacy Policy Document"
       />

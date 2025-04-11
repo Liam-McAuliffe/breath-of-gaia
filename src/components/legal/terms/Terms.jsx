@@ -9,7 +9,7 @@ const Terms = () => {
       </h1>
       <embed
         className="h-full w-full"
-        src="../../../public/docs/terms-of-service.pdf"
+        src="../../../docs/terms-of-service.pdf"
         type="application/pdf"
         title="Terms of Service Document"
       />
