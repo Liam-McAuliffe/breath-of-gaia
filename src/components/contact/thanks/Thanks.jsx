@@ -25,7 +25,7 @@ function Thanks() {
           <FaCheckCircle className="text-accent-secondary text-6xl" />
         </div>
         <p className="text-lg text-text-dark mb-8">
-          We've received your message and appreciate you reaching out to
+          I've received your message and appreciate you reaching out to
           MyHomeImpact.
         </p>
       </div>
@@ -96,7 +96,7 @@ function Thanks() {
           to="/about"
           className="inline-block bg-button-primary hover:bg-button-hover text-white font-medium py-3 px-8 rounded-md transition-colors duration-300"
         >
-          Learn More About Us
+          Learn More About This Site
         </Link>
       </div>
 

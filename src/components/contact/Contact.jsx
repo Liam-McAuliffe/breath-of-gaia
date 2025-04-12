@@ -37,7 +37,7 @@ const Contact = () => {
           className="mb-6 text-3xl font-heading text-bg-dark text-center font-bold"
           id="contact"
         >
-          Contact Us
+          Contact Me
         </h2>
         <form onSubmit={onSubmit} className="space-y-6">
           <div>
